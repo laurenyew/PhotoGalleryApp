@@ -6,10 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 /**
  * A placeholder fragment containing a simple view.
  */
 public class PhotoGalleryActivityFragment extends Fragment {
+
+
 
     public PhotoGalleryActivityFragment() {
     }

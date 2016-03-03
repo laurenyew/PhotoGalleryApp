@@ -11,6 +11,13 @@ import android.view.MenuItem;
 
 public class PhotoGalleryActivity extends AppCompatActivity {
 
+    private Integer[] imageIds =
+            {
+                    R.drawable.pic1,
+                    R.drawable.pic2,
+                    R.drawable.pic3
+            };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
