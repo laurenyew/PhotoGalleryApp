@@ -11,4 +11,3 @@ Mini Project to test out Material Design concepts and other spikes
 * Able to swipe view photo to go to another photo
 
 Created by: Lauren Yew
-Start: 2/24/2016
