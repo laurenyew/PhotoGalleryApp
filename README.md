@@ -1,7 +1,5 @@
 # **Photo Gallery App (Android)**
-## Mini Project to test out Material Design concepts and other spikes
-
-==
+Mini Project to test out Material Design concepts and other spikes
 
 ### **Proposed features**:
 - [x] View a single photo detail
