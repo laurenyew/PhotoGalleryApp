@@ -1,6 +1,10 @@
-Photo Gallery App (Android)
+**Photo Gallery App (Android)**
 
-Functions:
+Mini Project to test out Material Design concepts and other spikes
+
+==
+
+**Proposed features**:
 -Load a set of photos from the phone's gallery or internal database
 -Display photos in a gallery
 -Able to click on a photo to view
