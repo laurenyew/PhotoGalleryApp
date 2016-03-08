@@ -2,9 +2,11 @@
 Mini Project to test out Material Design concepts and other spikes
 
 ### **Proposed features**:
-- [x] View a single photo detail
-- [ ] Swipe view photo to go to another photo
-- [ ] Display photos in a gallery
+- [x] View a single photo detail -- Used fragment
+- [x] Swipe view photo to go to another photo -- used ViewPager
+- [ ] Use CardView to view the photo
+- [ ] Use RecyclerView to implement Smooth scrolling photo list
+- [ ] Display photos in a gallery -- Gridview/RecyclerView
 - [ ] Able to click on a photo to view
 - [ ] Load a set of photos from the phone's gallery or internal database
 

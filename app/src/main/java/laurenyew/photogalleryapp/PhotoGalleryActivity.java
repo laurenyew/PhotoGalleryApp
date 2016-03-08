@@ -3,6 +3,8 @@ package laurenyew.photogalleryapp;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -13,26 +15,12 @@ import laurenyew.photogalleryapp.detail.PhotoDetailFragment;
 
 public class PhotoGalleryActivity extends AppCompatActivity {
 
-    public static final String IMAGE_ID_KEY = "imageId";
 
-    private Integer[] imageIds =
-            {
-                    R.drawable.dog,
-                    R.drawable.cat,
-                    R.drawable.default_img
-            };
 
-    private int currentImageIndex = 0;
+    private ViewPager imageDetailPager;
 
-    private Integer getCurrentImage()
-    {
-        if(currentImageIndex < 0 || currentImageIndex > imageIds.length)
-        {
-            currentImageIndex = 0;
-        }
+    private PagerAdapter imageDetailPagerAdapter;
 
-        return imageIds[currentImageIndex];
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,22 +28,11 @@ public class PhotoGalleryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_photo_gallery);
 
         if(savedInstanceState == null) {
-            //Setup initial fragment into layout
-            if(findViewById(R.id.detail_fragment_container) != null)
-            {
-                PhotoDetailFragment detailFragment = new PhotoDetailFragment();
 
-                //send detail fragment the id of the image to display
-                Bundle detailBundle = new Bundle();
-                detailBundle.putInt(IMAGE_ID_KEY, getCurrentImage());
-                detailFragment.setArguments(detailBundle);
+            imageDetailPager = (ViewPager) findViewById(R.id.image_detail_view_pager);
+            imageDetailPagerAdapter = new PhotoDetailPagerAdapter(getSupportFragmentManager());
+            imageDetailPager.setAdapter(imageDetailPagerAdapter);
 
-                //Replace fragment container view with fragment
-                android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.detail_fragment_container, detailFragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
 
             //Setup toolbar and floating action button
             //TODO: Add to toolbar
