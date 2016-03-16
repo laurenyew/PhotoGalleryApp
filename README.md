@@ -15,7 +15,7 @@ Mini Project to test out Material Design concepts and other spikes
 - [x] Activity/Fragment
 - [x] ViewPager/Adapter
 - [ ] Multiple Fragments
-- [ ] CardView
+- [x] CardView
 - [ ] RecyclerView (List) --> Gallery
 - [ ] RecyclerView (grid) --> Gallery
 - [ ] Toolbar
