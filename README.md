@@ -4,7 +4,8 @@ Mini Project to test out Material Design concepts and other spikes
 ### **Proposed features**:
 - [x] View a single photo detail -- Used fragment
 - [x] Swipe view photo to go to another photo -- used ViewPager
-- [ ] Use CardView to view the photo
+- [x] Use CardView to view the photo
+- [ ] Use Material Design Tabs (iOS new look) to switch between view pager and recycler view list
 - [ ] Use RecyclerView to implement Smooth scrolling photo list
 - [ ] Display photos in a gallery -- Gridview/RecyclerView
 - [ ] Able to click on a photo to view
