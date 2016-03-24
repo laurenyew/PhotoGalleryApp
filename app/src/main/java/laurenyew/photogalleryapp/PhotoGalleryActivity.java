@@ -35,8 +35,7 @@ public class PhotoGalleryActivity extends AppCompatActivity {
 
 
             //Setup toolbar and floating action button
-            //TODO: Add to toolbar
-            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_bottom);
             setSupportActionBar(toolbar);
 
             FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.add_photo);
@@ -51,6 +50,8 @@ public class PhotoGalleryActivity extends AppCompatActivity {
         }
 
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
