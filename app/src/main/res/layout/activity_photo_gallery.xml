@@ -37,7 +37,6 @@
         android:id="@+id/image_detail_view_pager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
     </android.support.v4.view.ViewPager>
 
 
@@ -45,8 +44,9 @@
         android:id="@+id/add_photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
+        app:layout_anchor="@+id/toolbar_bottom_container"
+        app:layout_anchorGravity="bottom|right|end"
         android:src="@android:drawable/ic_dialog_email" />
 
     <android.support.design.widget.AppBarLayout
@@ -54,13 +54,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
         android:theme="@style/AppTheme.AppBarOverlay">
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar_bottom"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             app:popupTheme="@style/Theme.AppCompat.CompactMenu"/>
+
+        <!-- TODO: Add Button icons here instead of menu icons. -->
     </android.support.design.widget.AppBarLayout>
 
 

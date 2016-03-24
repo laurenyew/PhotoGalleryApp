@@ -37,6 +37,7 @@ public class PhotoGalleryActivity extends AppCompatActivity {
             //Setup toolbar and floating action button
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_bottom);
             setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
 
             FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.add_photo);
             fab.setOnClickListener(new View.OnClickListener() {
