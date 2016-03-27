@@ -7,12 +7,15 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import laurenyew.photogalleryapp.detail.PhotoDetailFragment;
+import laurenyew.photogalleryapp.list.ImageListLinearLayoutManager;
 
 public class PhotoGalleryActivity extends AppCompatActivity {
 
@@ -22,9 +25,13 @@ public class PhotoGalleryActivity extends AppCompatActivity {
 
     private VIEW_TYPE currentViewType = VIEW_TYPE.DETAIL;
 
+    //DETAIL VIEW PAGER
     private ViewPager imageDetailPager;
-
     private PagerAdapter imageDetailPagerAdapter;
+
+    //RECYCLER LIST VIEW
+    private RecyclerView recyclerView;
+    ImageListLinearLayoutManager imageListLinearLayoutManager;
 
 
     @Override
@@ -34,11 +41,17 @@ public class PhotoGalleryActivity extends AppCompatActivity {
 
         if(savedInstanceState == null) {
 
-            currentViewType = VIEW_TYPE.DETAIL;
+            //DETAIL PAGER
             imageDetailPager = (ViewPager) findViewById(R.id.image_detail_view_pager);
             imageDetailPagerAdapter = new PhotoDetailPagerAdapter(getSupportFragmentManager());
             imageDetailPager.setAdapter(imageDetailPagerAdapter);
 
+            //RECYCLER VIEW
+            recyclerView = (RecyclerView) findViewById(R.id.image_list_recycler_view);
+            recyclerView.setHasFixedSize(true);
+            imageListLinearLayoutManager = new ImageListLinearLayoutManager(this);
+            imageListLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+            recyclerView.setLayoutManager(imageListLinearLayoutManager);
 
             //Setup toolbar and floating action button
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_bottom);
@@ -55,6 +68,9 @@ public class PhotoGalleryActivity extends AppCompatActivity {
                 }
             });
 
+
+            //SET UP DEFAULT VIEW
+            currentViewType = VIEW_TYPE.DETAIL;
             showViewType(currentViewType);
         }
 
