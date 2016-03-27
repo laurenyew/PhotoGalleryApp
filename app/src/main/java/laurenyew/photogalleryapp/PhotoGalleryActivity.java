@@ -136,7 +136,7 @@ public class PhotoGalleryActivity extends AppCompatActivity {
     {
         System.out.println("Show view type: " + viewType);
 
-        findViewById(R.id.action_detail_page).setVisibility((VIEW_TYPE.DETAIL == currentViewType)? View.VISIBLE : View.INVISIBLE);
-        findViewById(R.id.action_list_page).setVisibility((VIEW_TYPE.LIST == currentViewType)? View.VISIBLE : View.INVISIBLE);
+        findViewById(R.id.image_detail_view_pager).setVisibility((VIEW_TYPE.DETAIL == currentViewType)? View.VISIBLE : View.INVISIBLE);
+        findViewById(R.id.image_list_recycler_view).setVisibility((VIEW_TYPE.LIST == currentViewType)? View.VISIBLE : View.INVISIBLE);
     }
 }
