@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.ActionMenuView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -24,6 +25,9 @@ public class PhotoGalleryActivity extends AppCompatActivity {
     }
 
     private VIEW_TYPE currentViewType = VIEW_TYPE.DETAIL;
+
+    //TOOLBAR MENU
+    private ActionMenuView toolbarMenuView;
 
     //DETAIL VIEW PAGER
     private ViewPager imageDetailPager;
@@ -56,7 +60,13 @@ public class PhotoGalleryActivity extends AppCompatActivity {
             //Setup toolbar and floating action button
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_bottom);
             setSupportActionBar(toolbar);
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
+            toolbarMenuView = (ActionMenuView) findViewById(R.id.toolbar_bottom_menu_container);
+            toolbarMenuView.setOnMenuItemClickListener(new ActionMenuView.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem item) {
+                    return onOptionsItemSelected(item);
+                }
+            });
 
             FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.add_photo);
             fab.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +91,7 @@ public class PhotoGalleryActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_photo_gallery, menu);
+        getMenuInflater().inflate(R.menu.menu_photo_gallery, toolbarMenuView.getMenu());
         return true;
     }
 

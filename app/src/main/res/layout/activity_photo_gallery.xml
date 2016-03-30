@@ -67,7 +67,15 @@
             android:layout_height="wrap_content"
             android:minHeight="?attr/actionBarSize"
             android:background="@color/colorPrimary"
-            app:popupTheme="@style/Theme.AppCompat.CompactMenu"/>
+            app:popupTheme="@style/Theme.AppCompat.CompactMenu">
+
+            <android.support.v7.widget.ActionMenuView
+                android:id="@+id/toolbar_bottom_menu_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?attr/actionBarSize"
+                android:gravity="left"/>
+        </android.support.v7.widget.Toolbar>
 
         <!-- TODO: Add Button icons here instead of menu icons. -->
     </android.support.design.widget.AppBarLayout>
